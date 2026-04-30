@@ -1,11 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter_clean_arch_finance_app/src/core/enums/type.dart';
 
 class Category extends Equatable {
 
   final int id;
   final String name;
-  final Type typeCategory;
+  final TypeStatus typeCategory;
   final bool isSystemCategory;
 
   const Category({
@@ -16,5 +17,5 @@ class Category extends Equatable {
   });
 
   @override
-  List<Object> get props => [id, name, isSystemCategory];
+  List<Object> get props => [id, name, typeCategory, isSystemCategory];
 }
