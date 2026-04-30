@@ -1,7 +1,7 @@
-enum Type {
+enum TypeStatus {
   income('Pemasukan'),
   expense('Pengeluaran');
 
   final String value;
-  const Type(this.value);
+  const TypeStatus(this.value);
 }
