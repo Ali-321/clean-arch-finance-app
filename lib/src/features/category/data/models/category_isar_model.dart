@@ -5,7 +5,6 @@ import '../../domain/entities/category.dart';
 
 @collection
 class CategoryIsarModel {
-
   Id id = Isar.autoIncrement;
   late String name;
 
@@ -23,11 +22,24 @@ class CategoryIsarModel {
     );
   }
 
-  CategoryIsarModel fromEntity(Category category){
+  CategoryIsarModel fromEntity(Category category) {
     return CategoryIsarModel()
-    ..id = category.id
-    ..name = category.name
-    ..typeCategory = category.typeCategory
-    ..isSystemCategory = category.isSystemCategory;
+      ..id = category.id
+      ..name = category.name
+      ..typeCategory = category.typeCategory
+      ..isSystemCategory = category.isSystemCategory;
+  }
+
+  CategoryIsarModel copyWith({
+    Id? id,
+    String? name,
+    TypeStatus? typeCategory,
+    bool? isSystemCategory,
+  }) {
+    return CategoryIsarModel()
+      ..id = id ?? this.id
+      ..name = name ?? this.name
+      ..typeCategory = typeCategory ?? this.typeCategory
+      ..isSystemCategory = isSystemCategory ?? this.isSystemCategory;
   }
 }
